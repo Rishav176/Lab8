@@ -30,8 +30,8 @@ public class CustomListTest {
     @Test
     public void addCityTest(){
         list = MockCityList();
-        listSize = list.getCount();
-        list.addCity("Estevan","SK");
+        int listSize = list.getCount();
+        list.addCity(new City("Estevan","SK"));
         assertEquals(list.getCount(),listSize+1);
     }
 }
