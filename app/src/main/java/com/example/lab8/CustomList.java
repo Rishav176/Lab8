@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-
+import java.util.Collections;
+import java.util.List;
 public class CustomList extends ArrayAdapter<City> {
 
     private ArrayList<City> cities;
@@ -68,6 +69,6 @@ public class CustomList extends ArrayAdapter<City> {
      */
     public boolean hasCity(City city) {
         return cities.contains(city);
-    };
+    }
 
 }
