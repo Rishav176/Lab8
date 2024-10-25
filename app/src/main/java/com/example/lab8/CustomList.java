@@ -71,4 +71,17 @@ public class CustomList extends ArrayAdapter<City> {
         return cities.contains(city);
     }
 
+    /**
+     * Removes a city from the list if it exists.
+     *
+     * @param city the city to remove
+     * @throws IllegalArgumentException if the city does not exist in the list
+     */
+    public void deleteCity(City city) {
+        if (!cities.contains(city)){
+            throw new IllegalArgumentException();
+        } else{
+            cities.remove(city);
+        }
+    };
 }
