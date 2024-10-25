@@ -68,6 +68,22 @@ public class CustomListTest {
         assertEquals(listSize-1,cityList.getCount());
     }
 
-
+    /**
+     * Tests the counting of cities in the city list.
+     * This method creates a mock city list and asserts the initial count of cities is 0.
+     * It then adds two new cities to the list
+     * and asserts that the count of cities is now 2.
+     * After deleting a mock city, it verifies that the count of cities is reduced to 1.
+     */
+    @Test
+    void testCountCities() {
+        CityList cityList = MockCityList();
+        assertEquals(0, cityList.countCities());
+        cityList.add(new City("Calgary", "Alberta"));
+        cityList.add(new City("Ottawa", "Ontario"));
+        assertEquals(2, cityList.countCities());
+        cityList.deleteCity(mockCity());
+        assertEquals(1, cityList.countCities());
+    }
 
 }
