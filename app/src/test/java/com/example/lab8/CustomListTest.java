@@ -49,5 +49,22 @@ public class CustomListTest {
         assertTrue(list.hasCity(city));
     }
 
+    /**
+     * Tests the deletion of a city from the city list.
+     * This method creates a mock city list and adds a city to it.
+     * It asserts that the city is present in the list, then deletes the city.
+     * After deletion, it verifies that the city is no longer present in the list
+     * and checks that the total number of cities in the list is reduced by one.
+     */
+    @Test
+    void testDeleteCity(){
+        CustomList cityList = MockCityList();
+        City city = new City("Waterloo","Ontario");
+        cityList.addCity(city);
+        assertTrue(cityList.hasCity(city));
+        cityList.deleteCity(city);
+        assertFalse(cityList.hasCity(city));
+        assertEquals(1,cityList.getCount());
+    }
 
 }
